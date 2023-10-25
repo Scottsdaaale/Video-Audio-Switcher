@@ -39,6 +39,21 @@ function App() {
 
   const handleAudioChange = (index) => {
     setSelectedAudioSource(index);
+  
+    // Get the audio element by its ID
+    const audioElement = document.getElementById('audioElement');
+  
+    // Check if the audio is currently playing
+    if (audioElement.paused) {
+      // Set the new audio source
+      audioElement.src = audioSources[index].src;
+      
+      // Play the audio
+      audioElement.play();
+    } else {
+      // If the audio is playing, pause it
+      audioElement.pause();
+    }
   };
 
   return (
@@ -92,6 +107,7 @@ function App() {
           </Col>
         </Col>
       </Row>
+      <audio id="audioElement" controls style={{ display: 'none' }} />
     </Container>
   );
 }
