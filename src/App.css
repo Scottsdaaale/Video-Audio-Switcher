@@ -1,0 +1,27 @@
+.scrollable-menu-container {
+  /* padding: 15px; */
+  overflow-y: auto;
+  max-height: 400px; /* Adjust this value as needed */
+}
+
+.scrollable-menu-container-audio{
+  overflow-y: auto;
+  max-height: 200px; /* Adjust this value as needed */
+}
+
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.menu-item {
+  margin: 5px; /* Adjust the spacing between thumbnails */
+  
+}
+
+.menu-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
