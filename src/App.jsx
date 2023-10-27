@@ -5,7 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import VideoPlayer from "./components/VideoPlayer";
 import VideoMenu from "./components/VideoMenu";
 import AudioMenu from "./components/AudioMenu";
-import AudioPlayer from "./components/AudioPlayer";
+// import AudioPlayer from "./components/AudioPlayer";
 import Header from "./Header";
 
 import video1 from "./assets/video1.mp4";
@@ -26,35 +26,36 @@ function App() {
     { title: "City", src: audio2 },
     { title: "Crack House", src: audio2 },
     { title: "Bathroom", src: audio2 },
-    { title: "", src: audio2 },
+    { title: "idk...poop?", src: audio2 },
     { title: "City", src: audio2 },
   ];
 
   const [selectedVideoSource, setSelectedVideoSource] = useState(0);
-  const [selectedAudioSource, setSelectedAudioSource] = useState(0);
+  const [selectedAudioSource, setSelectedAudioSource] = useState(null);
 
   const handleVideoChange = (index) => {
     setSelectedVideoSource(index);
   };
 
-  const handleAudioChange = (index) => {
-    setSelectedAudioSource(index);
+const handleAudioChange = (index) => {
+  const audioElement = document.getElementById("audioElement");
   
-    // Get the audio element by its ID
-    const audioElement = document.getElementById('audioElement');
-  
-    // Check if the audio is currently playing
+  if (index === selectedAudioSource) {
     if (audioElement.paused) {
-      // Set the new audio source
-      audioElement.src = audioSources[index].src;
-      
-      // Play the audio
       audioElement.play();
     } else {
-      // If the audio is playing, pause it
       audioElement.pause();
     }
-  };
+  } else {
+    if (!audioElement.paused) {
+      audioElement.pause();
+    }
+    audioElement.src = audioSources[index].src;
+    audioElement.play();
+    setSelectedAudioSource(index);
+  }
+};
+  
 
   return (
     <Container fluid style={{ backgroundColor: '#151827' }}>
