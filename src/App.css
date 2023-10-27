@@ -1,12 +1,43 @@
-.scrollable-menu-container {
+.scrollable-menu-container-video {
   /* padding: 15px; */
   overflow-y: auto;
   max-height: 400px; /* Adjust this value as needed */
+  scrollbar-width: thin; /* Width of the scroll bar (thin or auto) */
+  scrollbar-color: #007bff #161825; /* Scroll bar color and background color */
 }
 
-.scrollable-menu-container-audio{
+.scrollable-menu-container-audio {
   overflow-y: auto;
   max-height: 200px; /* Adjust this value as needed */
+  scrollbar-width: thin; /* Width of the scroll bar (thin or auto) */
+  scrollbar-color: #007bff #161825; /* Scroll bar color and background color */
+}
+
+/* Webkit browsers (Chrome, Safari) */
+.scrollable-menu-container-audio::-webkit-scrollbar,
+.scrollable-menu-container-video::-webkit-scrollbar {
+  width: 5px; /* Adjust the width as needed */
+}
+
+.scrollable-menu-container-audio::-webkit-scrollbar-thumb,
+.scrollable-menu-container-video::-webkit-scrollbar-thumb {
+  background-color: #007bff; /* Scroll thumb color */
+}
+
+.scrollable-menu-container-audio::-webkit-scrollbar-thumb:hover,
+.scrollable-menu-container-video::-webkit-scrollbar-thumb:hover
+ {
+  background-color: #0066cc; /* Scroll thumb color on hover */
+}
+
+.scrollable-menu-container-audio::-webkit-scrollbar-track,
+.scrollable-menu-container-video::-webkit-scrollbar-track {
+  background: #161825; /* Scroll track background color */
+}
+
+.scrollable-menu-container-audio::-webkit-scrollbar-corner,
+.scrollable-menu-container-video::-webkit-scrollbar-corner {
+  background: #161825; /* Scroll corner color */
 }
 
 .menu-items {
@@ -24,4 +55,9 @@
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.clicked {
+  transform: scale(0.95); /* You can adjust the scale as needed */
+  transition: transform 0.2s; /* Adjust the duration as needed */
 }
