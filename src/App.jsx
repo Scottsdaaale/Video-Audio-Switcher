@@ -86,12 +86,12 @@ function App() {
       >
         <Col lg={10}>
           <Row>
-            <Col style={{ padding: '0px' }}>
+            <Col>
               <VideoPlayer src={videoSources[selectedVideoSource].src} />
             </Col>
           </Row>
         </Col>
-        <Col lg={2} style={{ padding: '0', backgroundColor: '#1c2232' }}>
+        <Col lg={2} style={{ backgroundColor: '#1c2232' }}>
          <AccordionMenu items={accordionItems} />
         </Col>
       </Row>
