@@ -1,30 +1,30 @@
-import { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import VideoPlayer from './components/VideoPlayer';
-import VideoMenu from './components/VideoMenu';
-import AudioMenu from './components/AudioMenu';
-import AccordionMenu from './components/AccordionMenu';
-import video1 from './assets/video1.mp4';
-import video2 from './assets/video2.mp4';
-import audio1 from './assets/audio1.mp3';
-import audio2 from './assets/audio2.mp3';
-import thumbnail1 from './assets/thumbnail1.jpg';
-import thumbnail2 from './assets/thumbnail2.jpg';
-import './App.css'
+import { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import VideoPlayer from "./components/VideoPlayer";
+import VideoMenu from "./components/VideoMenu";
+import AudioMenu from "./components/AudioMenu";
+import AccordionMenu from "./components/AccordionMenu";
+import video1 from "./assets/video1.mp4";
+import video2 from "./assets/video2.mp4";
+import audio1 from "./assets/audio1.mp3";
+import audio2 from "./assets/audio2.mp3";
+import thumbnail1 from "./assets/thumbnail1.jpg";
+import thumbnail2 from "./assets/thumbnail2.jpg";
+import "./App.css";
 
 function App() {
   const videoSources = [
-    { title: 'Video 1', src: video1, thumbnail: thumbnail1 },
-    { title: 'Video 2', src: video2, thumbnail: thumbnail2 },
+    { title: "Video 1", src: video1, thumbnail: thumbnail1 },
+    { title: "Video 2", src: video2, thumbnail: thumbnail2 },
   ];
 
   const audioSources = [
-    { title: 'Nature', src: audio1 },
-    { title: 'City', src: audio2 },
-    { title: 'Crack House', src: audio2 },
-    { title: 'Bathroom', src: audio2 },
-    { title: 'idk...poop?', src: audio2 },
-    { title: 'City', src: audio2 },
+    { title: "Nature", src: audio1 },
+    { title: "City", src: audio2 },
+    { title: "Crack House", src: audio2 },
+    { title: "Bathroom", src: audio2 },
+    { title: "idk...poop?", src: audio2 },
+    { title: "City", src: audio2 },
   ];
 
   const [selectedVideoSource, setSelectedVideoSource] = useState(0);
@@ -35,7 +35,7 @@ function App() {
   };
 
   const handleAudioChange = (index) => {
-    const audioElement = document.getElementById('audioElement');
+    const audioElement = document.getElementById("audioElement");
 
     if (index === selectedAudioSource) {
       if (audioElement.paused) {
@@ -55,7 +55,7 @@ function App() {
 
   const accordionItems = [
     {
-      title: 'Video',
+      title: "Video",
       content: (
         <VideoMenu
           sources={videoSources}
@@ -65,7 +65,7 @@ function App() {
       ),
     },
     {
-      title: 'Audio',
+      title: "Audio",
       content: (
         <AudioMenu
           sources={audioSources}
@@ -77,11 +77,15 @@ function App() {
   ];
 
   return (
-    <Container fluid className="mt-3 mb-3" style={{ backgroundColor: '#151827' }}>
-      
+    <Container
+      fluid
+      className="mt-3 mb-3"
+      style={{ backgroundColor: "#151827" }}
+    >
       <Row
         style={{
-          backgroundColor: '#1b1d2c',
+          backgroundColor: "#1b1d2c",
+          
         }}
       >
         <Col lg={10}>
@@ -91,19 +95,23 @@ function App() {
             </Col>
           </Row>
         </Col>
-        <Col lg={2} style={{ backgroundColor: '#1c2232' }}>
-         <AccordionMenu items={accordionItems} />
+        <Col
+          lg={2}
+          style={{
+            backgroundColor: "#1c2232",
+            paddingTop: "50px",
+            paddingBottom: "50px",
+          }}
+        >
+          <AccordionMenu items={accordionItems} style={{}}/>
         </Col>
       </Row>
-      <audio id="audioElement" controls style={{ display: 'none' }} />
+      <audio id="audioElement" controls style={{ display: "none" }} />
     </Container>
   );
 }
 
 export default App;
-
-
-
 
 // import "./App.css";
 
@@ -147,7 +155,7 @@ export default App;
 
 // const handleAudioChange = (index) => {
 //   const audioElement = document.getElementById("audioElement");
-  
+
 //   if (index === selectedAudioSource) {
 //     if (audioElement.paused) {
 //       audioElement.play();
@@ -169,7 +177,7 @@ export default App;
 
 //       {/* <Header /> */}
 //       {/* <div style={{ opacity: 0.5 }}><AccordionMenu /></div> */}
-      
+
 //       <Row
 //         style={{
 //           backgroundColor: '#1b1d2c',
@@ -199,7 +207,7 @@ export default App;
 //               onSelectSource={handleVideoChange}
 //             />
 //           </Col>
-  
+
 //           <div
 //             style={{
 //               padding: '15px',
