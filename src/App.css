@@ -56,7 +56,23 @@
   display: block;
 }
 
-.clicked {
-  transform: scale(0.95); 
-  transition: transform 0.2s; 
+.accordion-icon {
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.rotate {
+  transform: rotate(180deg); /* Rotate the icon when the item is active */
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.15s ease-in-out; /* Add a smooth transition for the max-height */
 }
