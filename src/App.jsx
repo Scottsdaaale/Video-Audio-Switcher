@@ -12,6 +12,10 @@ import audio2 from "./assets/audio2.mp3";
 import allRightWithMe from "./assets/all right with me.mp3";
 import thumbnail1 from "./assets/thumbnail1.jpg";
 import thumbnail2 from "./assets/thumbnail2.jpg";
+
+import Header from "./components/Header";
+
+
 import "./App.css";
 
 function App() {
@@ -97,7 +101,7 @@ function App() {
   ];
 
   return (
-    <Container fluid className="mt-3 mb-3">
+    <Container fluid className="mt-3 mb-3 col-lg-11 col-md-11 col-sm-11">
       <Row
         style={
           {
@@ -105,28 +109,28 @@ function App() {
           }
         }
       >
-        <Col lg={10}>
+<Header />
+        <Col>
           <Row>
-            <Col>
+            <Col col>
               <VideoPlayer src={videoSources[selectedVideoSource].src} />
             </Col>
           </Row>
           <Row>
-            <Col>
+            <Col className="col-lg-12 mb-4 mt-2">
               <ControlBar />
               <audio id="audioElement" controls style={{  }} />
             </Col>
           </Row>
         </Col>
-        <Col
-          lg={2}
+        <Col className="col-lg-4 mb-4"
+          lg={4}
           style={{
             // backgroundColor: "#1c2232",
-            paddingTop: "50px",
             paddingBottom: "50px",
           }}
         >
-          <AccordionMenu items={accordionItems} />
+          <AccordionMenu items={accordionItems}/>
         </Col>
       </Row>
     </Container>

@@ -1,5 +1,5 @@
 import { Navbar } from "react-bootstrap";
-import logo from "./assets/57c.png";
+import logo from "../assets/header-logo.png";
 
 function Header() {
   return (
@@ -7,8 +7,7 @@ function Header() {
       <Navbar.Brand href="#home">
         <img
           src={logo}
-          width="50"
-          height="50"
+          height="30"
           className=""
           alt="Logo"
         />
