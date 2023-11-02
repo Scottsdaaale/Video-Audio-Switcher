@@ -8,7 +8,7 @@ function VideoMenu({ sources, selectedSource, onSelectSource }) {
             key={index}
             onClick={() => onSelectSource(index)}
           >
-            <img src={source.thumbnail} alt={source.title} />
+            <img src={source.thumbnail} alt={source.title} style={{borderRadius:"10px"}} />
           </div>
         ))}
       </div>
