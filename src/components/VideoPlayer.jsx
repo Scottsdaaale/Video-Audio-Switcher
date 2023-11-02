@@ -3,10 +3,10 @@ const VideoPlayer = ({ src }) => {
       width: '100%', 
       height: '100%', 
       borderRadius: '15px',
-      paddingTop: "50px",
-      paddingBottom: "50px",
-      paddingRight: "20px",
-      paddingLeft: "20px",
+      // paddingTop: "10px",
+      // paddingBottom: "20px",
+      // paddingRight: "20px",
+      // paddingLeft: "20px",
     };
   
     return <video controls={false} autoPlay loop muted src={src} style={videoStyle} />;
