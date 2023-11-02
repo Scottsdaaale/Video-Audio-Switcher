@@ -43,6 +43,7 @@ function AccordionMenu({ items }) {
             padding: "15px",
             background: "#00000066",
             cursor: "pointer"
+
           }}
         >
           <div
