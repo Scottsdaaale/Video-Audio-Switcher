@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import VideoPlayer from "./components/VideoPlayer";
 import VideoMenu from "./components/VideoMenu";
@@ -9,6 +9,7 @@ import video1 from "./assets/video1.mp4";
 import video2 from "./assets/video2.mp4";
 import audio1 from "./assets/audio1.mp3";
 import audio2 from "./assets/audio2.mp3";
+import allRightWithMe from "./assets/all right with me.mp3";
 import thumbnail1 from "./assets/thumbnail1.jpg";
 import thumbnail2 from "./assets/thumbnail2.jpg";
 import "./App.css";
@@ -17,16 +18,29 @@ function App() {
   const videoSources = [
     { title: "Video 1", src: video1, thumbnail: thumbnail1 },
     { title: "Video 2", src: video2, thumbnail: thumbnail2 },
+    { title: "Video 1", src: video1, thumbnail: thumbnail1 },
+    { title: "Video 2", src: video2, thumbnail: thumbnail2 },
+    { title: "Video 1", src: video1, thumbnail: thumbnail1 },
+    { title: "Video 2", src: video2, thumbnail: thumbnail2 },
+    { title: "Video 1", src: video1, thumbnail: thumbnail1 },
+    { title: "Video 2", src: video2, thumbnail: thumbnail2 },
   ];
 
   const audioSources = [
-    { title: "Nature", src: audio1 },
-    { title: "City", src: audio2 },
+    { title: "Lofi", src: allRightWithMe },
+    { title: "Space Jam", src: audio2 },
+    { title: "Boyerntuse", src: audio2 },
+    { title: "WOO", src: audio2 },
+    { title: "idk...poop?", src: audio2 },
+    { title: "City ViBeS", src: audio2 },
+    { title: "Nature Beat", src: audio1 },
+    { title: "Coffee At Sunrise Pussy", src: audio2 },
     { title: "Crack House", src: audio2 },
     { title: "Bathroom", src: audio2 },
     { title: "idk...poop?", src: audio2 },
     { title: "City", src: audio2 },
   ];
+
 
   const [selectedVideoSource, setSelectedVideoSource] = useState(0);
   const [selectedAudioSource, setSelectedAudioSource] = useState(null);
@@ -54,6 +68,11 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    const audioElement = document.getElementById("audioElement");
+    audioElement.volume = 0.5;
+  }, []);
+
   const accordionItems = [
     {
       title: "Video",
@@ -80,9 +99,11 @@ function App() {
   return (
     <Container fluid className="mt-3 mb-3">
       <Row
-        style={{
-          // backgroundColor: "#1b1d2c",
-        }}
+        style={
+          {
+            // backgroundColor: "#1b1d2c",
+          }
+        }
       >
         <Col lg={10}>
           <Row>
@@ -93,6 +114,7 @@ function App() {
           <Row>
             <Col>
               <ControlBar />
+              <audio id="audioElement" controls style={{  }} />
             </Col>
           </Row>
         </Col>
@@ -107,11 +129,8 @@ function App() {
           <AccordionMenu items={accordionItems} />
         </Col>
       </Row>
-  
-      <audio id="audioElement" controls style={{ display: "none" }} />
     </Container>
   );
-  
 }
 
 export default App;
