@@ -1,14 +1,14 @@
 .scrollable-menu-container-video {
 
   overflow-y: auto;
-  max-height: 200px; 
+  max-height: 300px; 
   scrollbar-width: thin; 
   scrollbar-color: #007bff #161825; 
 }
 
 .scrollable-menu-container-audio {
   overflow-y: auto;
-  max-height: 200px;
+  max-height: 300px;
   scrollbar-width: thin; 
   scrollbar-color: #007bff #161825; 
 }
@@ -33,6 +33,8 @@
 .scrollable-menu-container-audio::-webkit-scrollbar-track,
 .scrollable-menu-container-video::-webkit-scrollbar-track {
   background: #161825; 
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .scrollable-menu-container-audio::-webkit-scrollbar-corner,
@@ -54,6 +56,10 @@
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.custom-accordion {
+
 }
 
 .accordion-icon {

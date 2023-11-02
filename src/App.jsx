@@ -4,6 +4,7 @@ import VideoPlayer from "./components/VideoPlayer";
 import VideoMenu from "./components/VideoMenu";
 import AudioMenu from "./components/AudioMenu";
 import AccordionMenu from "./components/AccordionMenu";
+import ControlBar from "./components/ControlBar";
 import video1 from "./assets/video1.mp4";
 import video2 from "./assets/video2.mp4";
 import audio1 from "./assets/audio1.mp3";
@@ -77,15 +78,10 @@ function App() {
   ];
 
   return (
-    <Container
-      fluid
-      className="mt-3 mb-3"
-      style={{ backgroundColor: "#151827" }}
-    >
+    <Container fluid className="mt-3 mb-3">
       <Row
         style={{
-          backgroundColor: "#1b1d2c",
-          
+          // backgroundColor: "#1b1d2c",
         }}
       >
         <Col lg={10}>
@@ -94,21 +90,28 @@ function App() {
               <VideoPlayer src={videoSources[selectedVideoSource].src} />
             </Col>
           </Row>
+          <Row>
+            <Col>
+              <ControlBar />
+            </Col>
+          </Row>
         </Col>
         <Col
           lg={2}
           style={{
-            backgroundColor: "#1c2232",
+            // backgroundColor: "#1c2232",
             paddingTop: "50px",
             paddingBottom: "50px",
           }}
         >
-          <AccordionMenu items={accordionItems} style={{}}/>
+          <AccordionMenu items={accordionItems} />
         </Col>
       </Row>
+  
       <audio id="audioElement" controls style={{ display: "none" }} />
     </Container>
   );
+  
 }
 
 export default App;
