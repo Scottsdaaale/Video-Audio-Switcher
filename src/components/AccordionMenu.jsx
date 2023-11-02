@@ -41,7 +41,7 @@ function AccordionMenu({ items }) {
             // border: "2px solid white",
             borderRadius: "40px",
             padding: "15px",
-            background: "#00000066"
+            background: "rgba(0, 0, 0, 0.40)"
           }}
         >
           <div

@@ -2,9 +2,11 @@ function ControlBar() {
   return (
     <div
       style={{
-        border: "1px solid white",
         color: "white",
-        padding: "10px"
+        padding: "10px",
+        borderRadius: "26px",
+        background: "rgba(0, 0, 0, 0.40)",
+        backdropFilter: "blur(14px)"
       }}
     >
       ControlBar
