@@ -41,12 +41,12 @@ function AccordionMenu({ items }) {
             // border: "2px solid white",
             borderRadius: "40px",
             padding: "15px",
-            background: "#00000066"
+            background: "#00000066",
+            cursor: "pointer"
           }}
         >
           <div
             className="accordion-header"
-            
             style={{ color: "white", padding: "20px", }}
           >
             <span>{item.title}</span>
