@@ -18,9 +18,9 @@
 // }
 
 // export default AccordionMenu;
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 function AccordionMenu({ items }) {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -32,19 +32,28 @@ function AccordionMenu({ items }) {
       {items.map((item, index) => (
         <div
           key={index}
-          className={`accordion-item ${isItemActive(index) ? 'active' : ''}`}
-          style={{marginBottom: "20px", borderColor: "white"}}
+          onClick={() => {
+              setActiveIndex(isItemActive(index) ? null : index);
+            }}
+          className={`accordion-item ${isItemActive(index) ? "active" : ""}`}
+          style={{
+            marginBottom: "20px",
+            // border: "2px solid white",
+            borderRadius: "40px",
+            padding: "15px",
+            background: "#00000066"
+          }}
         >
           <div
             className="accordion-header"
-            onClick={() => {
-              setActiveIndex(isItemActive(index) ? null : index);
-            }}
-            style={{ color: 'white' }}
+            
+            style={{ color: "white", padding: "20px", }}
           >
             <span>{item.title}</span>
             <span
-              className={`accordion-icon ${isItemActive(index) ? 'rotate' : ''}`}
+              className={`accordion-icon ${
+                isItemActive(index) ? "rotate" : ""
+              }`}
             >
               <FontAwesomeIcon icon={faCaretDown} />
             </span>
@@ -52,8 +61,10 @@ function AccordionMenu({ items }) {
           <div
             className="accordion-content"
             style={{
-              maxHeight: isItemActive(index) ? '1000px' : '0',
-              transition: `max-height ${isItemActive(index) ? '0.3s' : '0.1s'} ease-in-out`,
+              maxHeight: isItemActive(index) ? "1000px" : "0",
+              transition: `max-height ${
+                isItemActive(index) ? "0.3s" : "0.1s"
+              } ease-in-out`,
             }}
           >
             {item.content}
@@ -65,4 +76,3 @@ function AccordionMenu({ items }) {
 }
 
 export default AccordionMenu;
-
