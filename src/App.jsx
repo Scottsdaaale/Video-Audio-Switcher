@@ -95,11 +95,6 @@ function App() {
               <VideoPlayer src={videoSources[selectedVideoSource].src} />
             </Col>
           </Row>
-          <Row>
-            <Col className="col-lg-12 mb-4 mt-2">
-              <ControlBar />
-            </Col>
-          </Row>
         </Col>
         <Col className="col-lg-4 mb-4"
           lg={4}
