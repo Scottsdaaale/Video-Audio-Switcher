@@ -118,7 +118,6 @@ function App() {
           </Row>
           <Row>
             <Col className="col-lg-12 mb-4 mt-2">
-              <ControlBar />
               <audio id="audioElement" controls style={{  }} />
             </Col>
           </Row>
